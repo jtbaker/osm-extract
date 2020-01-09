@@ -25,7 +25,7 @@ interval = 50000
 for x in range(min_id, max_id+1, interval):
     cur = conn.cursor()
     cur.execute(
-    f"select pgr_createTopology('osm_ways', 0.00001, 'geom', 'id', source:='source', target:='target', rows_where:='id>={x} and id<{x+interval}')"
+    f"select pgr_createTopology('osm_ways', 0.000000001, 'geom', 'id', source:='source', target:='target', rows_where:='id>={x} and id<{x+interval}')"
 )
     conn.commit()
     x_max = x + interval - 1

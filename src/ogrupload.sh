@@ -3,5 +3,5 @@ files=(osmfiles/*.osm)
 
 for file in $files 
 do
-ogr2ogr -append -f PostgreSQL PG:"user=$fwpguser password=$fwpgpass host=$fwpghost dbname=FWGeos" $file lines -nln "osm_ways" -lco "FID=id" -lco "GEOMETRY_NAME=geom"
+ogr2ogr -append -f PostgreSQL PG:"user=$fwpguser password=$fwpgpass host=$fwpghost dbname=FWGeos" $file lines -nln "osm_ways" -lco "FID=id" -lco "GEOMETRY_NAME=geom" -lco PRECISION=YES
 done
